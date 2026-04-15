@@ -559,3 +559,33 @@ function initTheme() {
 // ─────────────────────────────────────────────
 initTheme();
 renderAll();
+
+// ─────────────────────────────────────────────
+// DEVELOPER MODAL
+// ─────────────────────────────────────────────
+(function () {
+  const modal   = document.getElementById('dev-modal');
+  const overlay = document.getElementById('dev-overlay');
+  const openBtn = document.getElementById('btn-developer');
+  const closeBtn= document.getElementById('dev-close');
+
+  function openDev() {
+    modal.classList.add('open');
+    overlay.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+  }
+  function closeDev() {
+    modal.classList.remove('open');
+    overlay.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  openBtn?.addEventListener('click', openDev);
+  closeBtn?.addEventListener('click', closeDev);
+  overlay?.addEventListener('click', closeDev);
+
+  // Close on Escape (already handled globally — extend it)
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal?.classList.contains('open')) closeDev();
+  }, true);
+})();

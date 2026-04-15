@@ -722,3 +722,201 @@ body {
   .toast{ bottom: calc(24px + env(safe-area-inset-bottom)); }
   .info-panel { padding-bottom: env(safe-area-inset-bottom); }
 }
+
+/* ============================================================
+   DEVELOPER AVATAR BUTTON (header)
+   ============================================================ */
+.dev-avatar-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green), var(--gold));
+  border: 2px solid rgba(255,255,255,.15);
+  color: white;
+  font-family: inherit; font-size: 12px; font-weight: 800;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: .03em;
+  box-shadow: 0 0 0 0 rgba(26,127,55,.5);
+  transition: transform var(--t), box-shadow var(--t);
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+.dev-avatar-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 4px rgba(26,127,55,.3);
+}
+.dev-avatar-initials { line-height: 1; }
+
+/* ============================================================
+   DEVELOPER MODAL OVERLAY
+   ============================================================ */
+.dev-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.65);
+  z-index: 1500;
+  display: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.dev-overlay.open { display: block; }
+
+/* ============================================================
+   DEVELOPER MODAL CARD
+   ============================================================ */
+.dev-modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(.92);
+  width: min(380px, calc(100vw - 32px));
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hover);
+  border-radius: 24px;
+  z-index: 1600;
+  padding: 36px 28px 24px;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 16px;
+  box-shadow: 0 24px 80px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.05);
+  opacity: 0; pointer-events: none;
+  transition: transform .32s cubic-bezier(.34,1.56,.64,1), opacity .24s ease;
+}
+.dev-modal.open {
+  opacity: 1; pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Close button */
+.dev-close {
+  position: absolute; top: 14px; right: 14px;
+  width: 30px; height: 30px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text-secondary); font-size: 13px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background-color var(--t), color var(--t);
+}
+.dev-close:hover { background: var(--red); color: white; border-color: var(--red); }
+
+/* Avatar with animated glow ring */
+.dev-avatar {
+  position: relative;
+  width: 86px; height: 86px;
+  display: flex; align-items: center; justify-content: center;
+}
+.dev-avatar-ring {
+  position: absolute; inset: -4px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--green), var(--gold-light), var(--green));
+  animation: spin-ring 3s linear infinite;
+  padding: 3px;
+}
+.dev-avatar-ring::before {
+  content: '';
+  display: block; width: 100%; height: 100%;
+  background: var(--bg-surface);
+  border-radius: 50%;
+}
+@keyframes spin-ring {
+  to { transform: rotate(360deg); }
+}
+.dev-avatar-text {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #1a4a25, #2d7a3a);
+  border-radius: 50%;
+  font-size: 24px; font-weight: 800; color: white;
+  letter-spacing: .02em;
+  z-index: 1;
+}
+
+/* Name + title */
+.dev-intro { text-align: center; }
+.dev-name {
+  font-size: 22px; font-weight: 800;
+  background: linear-gradient(135deg, var(--green-light), var(--gold-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+.dev-title {
+  font-size: 13px; color: var(--text-secondary);
+  margin: 4px 0 0;
+}
+
+/* Skill chips */
+.dev-skills {
+  display: flex; flex-wrap: wrap;
+  gap: 7px; justify-content: center;
+}
+.dev-chip {
+  padding: 4px 12px;
+  background: rgba(26,127,55,.15);
+  border: 1px solid rgba(26,127,55,.3);
+  border-radius: 50px;
+  font-size: 11.5px; font-weight: 600;
+  color: var(--green-light);
+  letter-spacing: .02em;
+}
+
+/* Tagline */
+.dev-tagline {
+  font-size: 12.5px; color: var(--text-secondary);
+  text-align: center; line-height: 1.6;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Social buttons */
+.dev-socials {
+  display: flex; gap: 9px;
+  flex-wrap: wrap; justify-content: center;
+  width: 100%;
+}
+.dev-social-btn {
+  display: flex; align-items: center; gap: 7px;
+  padding: 9px 16px;
+  border-radius: var(--r-md);
+  text-decoration: none;
+  font-size: 13px; font-weight: 600; font-family: inherit;
+  border: 1px solid;
+  transition: transform var(--t), box-shadow var(--t), background-color var(--t);
+  flex: 1; min-width: 100px; justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.dev-social-btn:hover { transform: translateY(-2px); box-shadow: var(--sh-sm); }
+.dev-social-btn:active { transform: translateY(0); }
+
+.linkedin {
+  background: rgba(10,102,194,.12);
+  border-color: rgba(10,102,194,.35);
+  color: #5ba4e5;
+}
+.linkedin:hover { background: rgba(10,102,194,.22); }
+
+.github {
+  background: rgba(139,148,158,.1);
+  border-color: rgba(139,148,158,.3);
+  color: var(--text-primary);
+}
+.github:hover { background: rgba(139,148,158,.2); }
+
+.instagram {
+  background: rgba(225,48,108,.1);
+  border-color: rgba(225,48,108,.3);
+  color: #e1306c;
+}
+.instagram:hover { background: rgba(225,48,108,.2); }
+.instagram svg rect { fill: url(#ig-grad); }
+
+/* Footer */
+.dev-footer {
+  font-size: 11px; color: var(--text-muted);
+  text-align: center; padding-top: 4px;
+  border-top: 1px solid var(--border);
+  width: 100%;
+}
+
+/* Light theme adjustments */
+[data-theme="light"] .dev-avatar-text { background: linear-gradient(135deg, #1a7f37, #23a843); }
+[data-theme="light"] .linkedin { color: #0a66c2; }
+[data-theme="light"] .github { color: #24292f; }
