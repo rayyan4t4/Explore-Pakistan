@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover Pakistan's most beautiful and historical places — mountains, lakes, forts, shrines, and local gems — on an interactive map.">
+  <meta name="keywords" content="Pakistan tourism, Pakistan map, historical places Pakistan, mountains, Gilgit-Baltistan, KPK, Punjab, Sindh, Balochistan">
+  <meta name="author" content="Pakistan Tourism Map">
+  <meta property="og:title" content="Explore Pakistan — Interactive Tourism Map">
+  <meta property="og:description" content="500+ tourist, historical, and local places of Pakistan on an interactive map with rich details, history, and travel tips.">
+  <title>Explore Pakistan — Interactive Tourism Map</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <!-- Leaflet MarkerCluster CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="main-header">
+    <div class="header-left">
+      <div class="logo">
+        <span class="logo-icon">🇵🇰</span>
+        <div class="logo-text">
+          <span class="logo-title">Explore Pakistan</span>
+          <span class="logo-sub">Tourism Discovery Map</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-center">
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search" placeholder="Search places, cities, mountains..." autocomplete="off" aria-label="Search places">
+        <div id="search-suggestions" class="search-suggestions hidden"></div>
+        <button id="clear-search" class="clear-btn hidden" aria-label="Clear search">✕</button>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <button id="btn-theme" class="header-btn theme-toggle" title="Toggle light/dark mode" aria-label="Toggle light/dark mode">
+        <span class="btn-icon" id="theme-icon">🌙</span>
+        <span class="btn-label" id="theme-label">Dark</span>
+      </button>
+      <button id="btn-favorites" class="header-btn" title="My Favorites" aria-label="Toggle favorites filter">
+        <span class="btn-icon">❤️</span>
+        <span class="btn-label">Favorites</span>
+      </button>
+      <button id="btn-reset" class="header-btn" title="Reset to Pakistan view" aria-label="Reset map view">
+        <span class="btn-icon">🗺️</span>
+        <span class="btn-label">Reset</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== MAIN LAYOUT ===== -->
+  <div class="app-container">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside id="sidebar">
+      <!-- Filter bar -->
+      <div class="filter-bar">
+        <div class="filter-label">Filter by Category</div>
+        <div class="filter-chips" id="filter-chips">
+          <button class="chip active" data-cat="all">🌍 All</button>
+          <button class="chip" data-cat="mountain">🏔️ Mountains</button>
+          <button class="chip" data-cat="valley">🌿 Valleys</button>
+          <button class="chip" data-cat="historical">🏛️ Historical</button>
+          <button class="chip" data-cat="lake">💧 Lakes</button>
+          <button class="chip" data-cat="beach">🏖️ Beaches</button>
+          <button class="chip" data-cat="religious">🕌 Religious</button>
+          <button class="chip" data-cat="city">🏙️ Cities</button>
+          <button class="chip" data-cat="wildlife">🦁 Wildlife</button>
+          <button class="chip" data-cat="desert">🏜️ Deserts</button>
+        </div>
+      </div>
+
+      <!-- Province filter -->
+      <div class="province-filter">
+        <select id="province-select" aria-label="Filter by province">
+          <option value="all">All Provinces & Regions</option>
+          <option value="Gilgit-Baltistan">Gilgit-Baltistan</option>
+          <option value="KPK">Khyber Pakhtunkhwa</option>
+          <option value="Punjab">Punjab</option>
+          <option value="Sindh">Sindh</option>
+          <option value="Balochistan">Balochistan</option>
+          <option value="AJK">Azad Kashmir</option>
+          <option value="Islamabad">Islamabad</option>
+        </select>
+      </div>
+
+      <!-- Sort bar -->
+      <div class="sort-bar">
+        <label for="sort-select">Sort:</label>
+        <select id="sort-select" aria-label="Sort places">
+          <option value="name">Name A–Z</option>
+          <option value="rating">Top Rated</option>
+          <option value="province">By Province</option>
+        </select>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="stats-bar">
+        <span id="places-count">0 places</span>
+        <span class="stats-sep">·</span>
+        <span id="filter-label-text">All categories</span>
+      </div>
+
+      <!-- Places list -->
+      <ul id="places-list" role="list" aria-label="Places list"></ul>
+    </aside>
+
+    <!-- ===== MAP ===== -->
+    <div id="map-container">
+      <div id="map" aria-label="Pakistan interactive map"></div>
+
+      <!-- Map controls -->
+      <div class="map-controls">
+        <div class="layer-btn-group">
+          <button class="layer-btn active" data-layer="standard" title="Standard map" aria-label="Standard map layer">🗺️</button>
+          <button class="layer-btn" data-layer="satellite" title="Satellite view" aria-label="Satellite map layer">🛰️</button>
+          <button class="layer-btn" data-layer="terrain" title="Terrain view" aria-label="Terrain map layer">🏔️</button>
+          <button class="layer-btn" data-layer="dark" title="Dark map" aria-label="Dark map layer">🌙</button>
+        </div>
+      </div>
+
+      <!-- Zoom to Pakistan button -->
+      <button id="zoom-pakistan" class="zoom-pakistan-btn" title="Zoom to Pakistan" aria-label="Zoom to Pakistan">🇵🇰</button>
+    </div>
+  </div>
+
+  <!-- ===== INFO PANEL (slides in from right) ===== -->
+  <div id="info-panel" class="info-panel" role="dialog" aria-label="Place detail panel" aria-hidden="true">
+    <button id="close-panel" class="close-panel-btn" aria-label="Close detail panel">✕</button>
+
+    <div class="panel-hero">
+      <img id="panel-image" src="" alt="" loading="lazy">
+      <div class="panel-hero-overlay">
+        <div class="panel-badges">
+          <span id="panel-category-badge" class="category-badge"></span>
+          <span id="panel-province-badge" class="province-badge"></span>
+        </div>
+        <h2 id="panel-title"></h2>
+        <div class="panel-rating" id="panel-rating"></div>
+      </div>
+    </div>
+
+    <div class="panel-body">
+      <!-- Quick info row -->
+      <div class="panel-quickinfo">
+        <div class="qi-item">
+          <span class="qi-icon">📅</span>
+          <div>
+            <div class="qi-label">Best Time to Visit</div>
+            <div id="panel-besttime" class="qi-value"></div>
+          </div>
+        </div>
+        <div class="qi-item">
+          <span class="qi-icon">📍</span>
+          <div>
+            <div class="qi-label">Province / Region</div>
+            <div id="panel-province" class="qi-value"></div>
+          </div>
+        </div>
+        <div class="qi-item">
+          <span class="qi-icon">🏷️</span>
+          <div>
+            <div class="qi-label">Category</div>
+            <div id="panel-category" class="qi-value"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="panel-tabs">
+        <button class="tab-btn active" data-tab="overview">Overview</button>
+        <button class="tab-btn" data-tab="history">History</button>
+        <button class="tab-btn" data-tab="travel">Travel Info</button>
+      </div>
+
+      <div id="tab-overview" class="tab-content active">
+        <p id="panel-description"></p>
+      </div>
+      <div id="tab-history" class="tab-content">
+        <p id="panel-history"></p>
+      </div>
+      <div id="tab-travel" class="tab-content">
+        <div class="travel-tips">
+          <div class="tip-item">
+            <span class="tip-icon">☀️</span>
+            <div>
+              <strong>Best Time</strong>
+              <p id="travel-besttime"></p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <span class="tip-icon">📌</span>
+            <div>
+              <strong>Coordinates</strong>
+              <p id="travel-coords"></p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <span class="tip-icon">🗺️</span>
+            <div>
+              <strong>Region</strong>
+              <p id="travel-province"></p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <span class="tip-icon">⭐</span>
+            <div>
+              <strong>Rating</strong>
+              <p id="travel-rating"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="panel-actions">
+        <button id="btn-favorite-place" class="action-btn fav-btn" aria-label="Add to favorites">
+          <span class="fav-icon">🤍</span>
+          <span class="fav-label">Add to Favorites</span>
+        </button>
+        <button id="btn-directions" class="action-btn dir-btn" aria-label="Open in Google Maps">
+          <span>🧭</span>
+          <span>View on Google Maps</span>
+        </button>
+        <button id="btn-share" class="action-btn share-btn" aria-label="Share place">
+          <span>🔗</span>
+          <span>Share</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Share toast notification -->
+  <div id="toast" class="toast hidden" role="alert" aria-live="polite"></div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script src="places.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
