@@ -1,0 +1,8 @@
+# Netlify Redirects
+# Ensure canonical URL (no trailing slash issues)
+
+# Redirect www to non-www (if domain is ever connected)
+# https://www.explorepakistanmap.netlify.app/* https://explorepakistanmap.netlify.app/:splat 301!
+
+# Ensure all 404s return to the main app (SPA fallback)
+/*    /index.html   200

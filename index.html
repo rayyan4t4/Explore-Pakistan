@@ -3,13 +3,254 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Discover 500+ beautiful, historical and local places of Pakistan on an interactive map.">
-  <meta name="theme-color" content="#0d1117">
-  <meta name="google-site-verification" content="google2a73d04efd403ddf" />
-  <title>Explore Pakistan — Interactive Tourism Map</title>
 
+  <!-- ═══════════════════════════════════════════
+       PRIMARY SEO
+  ═══════════════════════════════════════════ -->
+  <title>Explore Pakistan — Interactive Tourism Map | 500+ Places</title>
+  <meta name="description" content="Discover 500+ tourist, historical, and local places of Pakistan on an interactive map. Explore mountains, lakes, forts, valleyes, shrines, and hidden gems across Gilgit-Baltistan, KPK, Punjab, Sindh, Balochistan, and Azad Kashmir.">
+  <meta name="keywords" content="Pakistan tourism, Pakistan map, tourist places Pakistan, historical places Pakistan, Gilgit Baltistan, KPK tourism, Punjab tourism, Sindh tourism, Balochistan tourism, Azad Kashmir, Pakistan travel guide, K2, Hunza Valley, Badshahi Mosque, Mohenjo Daro, Lahore Fort, Pakistan mountains, Pakistan lakes, Pakistan beaches">
+  <meta name="author" content="Explore Pakistan Map">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <link rel="canonical" href="https://explorepakistanmap.netlify.app/">
+
+  <!-- ═══════════════════════════════════════════
+       OPEN GRAPH (Facebook, WhatsApp, LinkedIn)
+  ═══════════════════════════════════════════ -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Explore Pakistan Map">
+  <meta property="og:title" content="Explore Pakistan — Interactive Tourism Map | 500+ Places">
+  <meta property="og:description" content="Discover 500+ tourist, historical, and local places of Pakistan — mountains, lakes, forts, valleys, shrines, and hidden gems — all on one interactive map with rich details and history.">
+  <meta property="og:url" content="https://explorepakistanmap.netlify.app/">
+  <meta property="og:image" content="https://explorepakistanmap.netlify.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Explore Pakistan — Interactive Tourism Map showing mountains, lakes, and historical places">
+  <meta property="og:locale" content="en_US">
+
+  <!-- ═══════════════════════════════════════════
+       TWITTER / X CARD
+  ═══════════════════════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Explore Pakistan — Interactive Tourism Map | 500+ Places">
+  <meta name="twitter:description" content="Discover 500+ tourist, historical, and local places of Pakistan on one interactive map. Mountains, lakes, forts, valleys & more.">
+  <meta name="twitter:image" content="https://explorepakistanmap.netlify.app/og-image.png">
+  <meta name="twitter:image:alt" content="Explore Pakistan Interactive Tourism Map">
+
+  <!-- ═══════════════════════════════════════════
+       PWA / ICONS
+  ═══════════════════════════════════════════ -->
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/og-image.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Explore Pakistan">
+
+  <!-- ═══════════════════════════════════════════
+       GEO / LOCATION TAGS
+  ═══════════════════════════════════════════ -->
+  <meta name="geo.region" content="PK">
+  <meta name="geo.placename" content="Pakistan">
+  <meta name="geo.position" content="30.3753;69.3451">
+  <meta name="ICBM" content="30.3753, 69.3451">
+
+  <!-- ═══════════════════════════════════════════
+       STRUCTURED DATA (JSON-LD)
+  ═══════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://explorepakistanmap.netlify.app/#website",
+        "url": "https://explorepakistanmap.netlify.app/",
+        "name": "Explore Pakistan — Interactive Tourism Map",
+        "description": "Discover 500+ tourist, historical, and local places of Pakistan on an interactive map.",
+        "publisher": { "@id": "https://explorepakistanmap.netlify.app/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://explorepakistanmap.netlify.app/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://explorepakistanmap.netlify.app/#organization",
+        "name": "Explore Pakistan Map",
+        "url": "https://explorepakistanmap.netlify.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://explorepakistanmap.netlify.app/og-image.png",
+          "width": 1200,
+          "height": 630
+        }
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://explorepakistanmap.netlify.app/#app",
+        "name": "Explore Pakistan — Interactive Tourism Map",
+        "url": "https://explorepakistanmap.netlify.app/",
+        "description": "An interactive map application showcasing 500+ tourist, historical, and local places across Pakistan.",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "Interactive map of Pakistan",
+          "500+ tourist places",
+          "Historical and cultural sites",
+          "Category and province filtering",
+          "Search functionality",
+          "Favorites system",
+          "Dark and light mode",
+          "Mobile friendly"
+        ]
+      },
+      {
+        "@type": "TouristDestination",
+        "@id": "https://explorepakistanmap.netlify.app/#destination",
+        "name": "Pakistan",
+        "description": "Pakistan is home to 5 of the world's 14 eight-thousanders, ancient Indus Valley civilizations, Mughal architecture, and diverse natural landscapes from the Karakoram Range to the Arabian Sea.",
+        "url": "https://explorepakistanmap.netlify.app/",
+        "image": "https://explorepakistanmap.netlify.app/og-image.png",
+        "touristType": [
+          { "@type": "Audience", "audienceType": "Adventure Travelers" },
+          { "@type": "Audience", "audienceType": "History Enthusiasts" },
+          { "@type": "Audience", "audienceType": "Nature Lovers" },
+          { "@type": "Audience", "audienceType": "Cultural Tourists" }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "30.3753",
+          "longitude": "69.3451"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "name": "Top Tourist Places in Pakistan",
+        "description": "A curated list of the highest-rated tourist destinations in Pakistan",
+        "url": "https://explorepakistanmap.netlify.app/",
+        "numberOfItems": 500,
+        "itemListElement": [
+          {
+            "@type": "ListItem", "position": 1,
+            "item": {
+              "@type": "TouristAttraction",
+              "name": "K2 Base Camp",
+              "description": "The base camp of K2, the world's second-highest mountain at 8,611m, located in Gilgit-Baltistan.",
+              "geo": { "@type": "GeoCoordinates", "latitude": "35.8818", "longitude": "76.5142" },
+              "url": "https://explorepakistanmap.netlify.app/?q=K2+Base+Camp",
+              "touristType": { "@type": "Audience", "audienceType": "Adventure Travelers" }
+            }
+          },
+          {
+            "@type": "ListItem", "position": 2,
+            "item": {
+              "@type": "TouristAttraction",
+              "name": "Badshahi Mosque",
+              "description": "One of the largest mosques in the world, built by Mughal Emperor Aurangzeb in 1673 in Lahore, Punjab.",
+              "geo": { "@type": "GeoCoordinates", "latitude": "31.5885", "longitude": "74.3102" },
+              "url": "https://explorepakistanmap.netlify.app/?q=Badshahi+Mosque",
+              "touristType": { "@type": "Audience", "audienceType": "Cultural Tourists" }
+            }
+          },
+          {
+            "@type": "ListItem", "position": 3,
+            "item": {
+              "@type": "TouristAttraction",
+              "name": "Hunza Valley",
+              "description": "A breathtaking mountain valley in Gilgit-Baltistan, surrounded by Rakaposhi, Ultar Sar, and Lady Finger peaks.",
+              "geo": { "@type": "GeoCoordinates", "latitude": "36.3167", "longitude": "74.6500" },
+              "url": "https://explorepakistanmap.netlify.app/?q=Hunza+Valley",
+              "touristType": { "@type": "Audience", "audienceType": "Nature Lovers" }
+            }
+          },
+          {
+            "@type": "ListItem", "position": 4,
+            "item": {
+              "@type": "TouristAttraction",
+              "name": "Mohenjo-daro",
+              "description": "A UNESCO World Heritage Site and one of the largest settlements of the ancient Indus Valley Civilisation, dating to 2500 BCE.",
+              "geo": { "@type": "GeoCoordinates", "latitude": "27.3244", "longitude": "68.1375" },
+              "url": "https://explorepakistanmap.netlify.app/?q=Mohenjo-daro",
+              "touristType": { "@type": "Audience", "audienceType": "History Enthusiasts" }
+            }
+          },
+          {
+            "@type": "ListItem", "position": 5,
+            "item": {
+              "@type": "TouristAttraction",
+              "name": "Lahore Fort",
+              "description": "A UNESCO World Heritage Site and magnificent Mughal fortification in the heart of Lahore, spanning over 40 years of Mughal rule.",
+              "geo": { "@type": "GeoCoordinates", "latitude": "31.5882", "longitude": "74.3085" },
+              "url": "https://explorepakistanmap.netlify.app/?q=Lahore+Fort",
+              "touristType": { "@type": "Audience", "audienceType": "History Enthusiasts" }
+            }
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How many tourist places are on the Pakistan map?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Explore Pakistan interactive map features 500+ tourist, historical, and local places across all provinces including Gilgit-Baltistan, KPK, Punjab, Sindh, Balochistan, and Azad Kashmir."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What categories of places are shown on the Pakistan tourism map?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The map includes mountains, valleys, lakes, historical sites, beaches, religious places, cities, wildlife sanctuaries, and deserts of Pakistan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the best time to visit Pakistan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The best time varies by region. Northern areas (Gilgit-Baltistan, KPK) are best visited from April to October. Punjab and Sindh plains are pleasant from October to March. Balochistan's coastal areas are ideal year-round."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the Pakistan tourism map free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Explore Pakistan Map is completely free to use. You can search, filter, save favorites, and explore all 500+ places at no cost."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════════
+       PERFORMANCE
+  ═══════════════════════════════════════════ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://tile.openstreetmap.org">
+  <link rel="dns-prefetch" href="https://server.arcgisonline.com">
+  <link rel="dns-prefetch" href="https://basemaps.cartocdn.com">
+
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
@@ -20,11 +261,11 @@
 <body>
 
   <!-- HEADER -->
-  <header id="main-header">
+  <header id="main-header" role="banner">
     <div class="header-left">
       <button id="btn-menu" class="icon-btn mobile-only" aria-label="Open sidebar">☰</button>
       <div class="logo">
-        <span class="logo-icon">🇵🇰</span>
+        <span class="logo-icon" aria-hidden="true">🇵🇰</span>
         <div class="logo-text">
           <span class="logo-title">Explore Pakistan</span>
           <span class="logo-sub">Tourism Map</span>
@@ -33,25 +274,25 @@
     </div>
 
     <div class="header-center">
-      <div class="search-wrapper">
-        <span class="search-icon">🔍</span>
-        <input type="search" id="search" placeholder="Search places…" autocomplete="off" aria-label="Search places">
-        <div id="search-suggestions" class="search-suggestions hidden"></div>
-        <button id="clear-search" class="clear-btn hidden" aria-label="Clear">✕</button>
+      <div class="search-wrapper" role="search">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input type="search" id="search" placeholder="Search places, mountains, forts…" autocomplete="off" aria-label="Search places in Pakistan" aria-haspopup="listbox" aria-autocomplete="list">
+        <div id="search-suggestions" class="search-suggestions hidden" role="listbox" aria-label="Search suggestions"></div>
+        <button id="clear-search" class="clear-btn hidden" aria-label="Clear search">✕</button>
       </div>
     </div>
 
     <div class="header-right">
-      <button id="btn-theme" class="icon-btn" title="Toggle theme" aria-label="Toggle light/dark mode">
-        <span id="theme-icon">🌙</span>
+      <button id="btn-theme" class="icon-btn" title="Toggle light/dark mode" aria-label="Toggle light/dark mode">
+        <span id="theme-icon" aria-hidden="true">🌙</span>
         <span class="btn-label" id="theme-label">Dark</span>
       </button>
-      <button id="btn-favorites" class="icon-btn" title="Favorites" aria-label="Toggle favorites">
-        <span>❤️</span>
+      <button id="btn-favorites" class="icon-btn" title="My saved places" aria-label="Toggle favorites filter">
+        <span aria-hidden="true">❤️</span>
         <span class="btn-label">Favorites</span>
       </button>
-      <button id="btn-reset" class="icon-btn desktop-only" title="Reset view" aria-label="Reset map">
-        <span>🔄</span>
+      <button id="btn-reset" class="icon-btn desktop-only" title="Reset to Pakistan view" aria-label="Reset map view">
+        <span aria-hidden="true">🔄</span>
         <span class="btn-label">Reset</span>
       </button>
     </div>
@@ -64,31 +305,31 @@
   <div class="app-container">
 
     <!-- SIDEBAR -->
-    <aside id="sidebar">
+    <aside id="sidebar" role="complementary" aria-label="Places browser">
       <div class="sidebar-header">
         <span class="sidebar-title">Places</span>
         <button id="btn-sidebar-close" class="icon-btn mobile-only" aria-label="Close sidebar">✕</button>
       </div>
 
       <!-- Category chips -->
-      <div class="filter-chips-wrap">
+      <div class="filter-chips-wrap" role="navigation" aria-label="Filter by category">
         <div class="filter-chips" id="filter-chips">
-          <button class="chip active" data-cat="all">🌍 All</button>
-          <button class="chip" data-cat="mountain">🏔️ Mountains</button>
-          <button class="chip" data-cat="valley">🌿 Valleys</button>
-          <button class="chip" data-cat="historical">🏛️ Historical</button>
-          <button class="chip" data-cat="lake">💧 Lakes</button>
-          <button class="chip" data-cat="beach">🏖️ Beaches</button>
-          <button class="chip" data-cat="religious">🕌 Religious</button>
-          <button class="chip" data-cat="city">🏙️ Cities</button>
-          <button class="chip" data-cat="wildlife">🦁 Wildlife</button>
-          <button class="chip" data-cat="desert">🏜️ Deserts</button>
+          <button class="chip active" data-cat="all" aria-pressed="true">🌍 All</button>
+          <button class="chip" data-cat="mountain" aria-pressed="false">🏔️ Mountains</button>
+          <button class="chip" data-cat="valley" aria-pressed="false">🌿 Valleys</button>
+          <button class="chip" data-cat="historical" aria-pressed="false">🏛️ Historical</button>
+          <button class="chip" data-cat="lake" aria-pressed="false">💧 Lakes</button>
+          <button class="chip" data-cat="beach" aria-pressed="false">🏖️ Beaches</button>
+          <button class="chip" data-cat="religious" aria-pressed="false">🕌 Religious</button>
+          <button class="chip" data-cat="city" aria-pressed="false">🏙️ Cities</button>
+          <button class="chip" data-cat="wildlife" aria-pressed="false">🦁 Wildlife</button>
+          <button class="chip" data-cat="desert" aria-pressed="false">🏜️ Deserts</button>
         </div>
       </div>
 
-      <!-- Province + Sort (inline) -->
+      <!-- Province + Sort -->
       <div class="filter-row">
-        <select id="province-select" aria-label="Filter by province">
+        <select id="province-select" aria-label="Filter by province or region">
           <option value="all">All Regions</option>
           <option value="Gilgit-Baltistan">Gilgit-Baltistan</option>
           <option value="KPK">KPK</option>
@@ -98,7 +339,7 @@
           <option value="AJK">Azad Kashmir</option>
           <option value="Islamabad">Islamabad</option>
         </select>
-        <select id="sort-select" aria-label="Sort">
+        <select id="sort-select" aria-label="Sort places">
           <option value="name">A–Z</option>
           <option value="rating">Top Rated</option>
           <option value="province">Region</option>
@@ -106,85 +347,113 @@
       </div>
 
       <!-- Stats -->
-      <div class="stats-bar">
+      <div class="stats-bar" aria-live="polite" aria-label="Filter results">
         <span id="places-count">0 places</span>
         <span id="filter-label-text" class="stats-label"></span>
       </div>
 
       <!-- List -->
-      <ul id="places-list" role="list"></ul>
+      <ul id="places-list" role="list" aria-label="Pakistan places list"></ul>
     </aside>
 
     <!-- MAP -->
-    <div id="map-container">
-      <div id="map" aria-label="Pakistan interactive map"></div>
+    <main id="map-container">
+      <div id="map" role="application" aria-label="Interactive map of Pakistan showing tourist and historical places" tabindex="0"></div>
 
       <!-- Layer switcher -->
-      <div class="map-controls">
-        <button class="layer-btn active" data-layer="standard" title="Standard">🗺️</button>
-        <button class="layer-btn" data-layer="satellite" title="Satellite">🛰️</button>
-        <button class="layer-btn" data-layer="dark" title="Dark">🌙</button>
+      <div class="map-controls" role="group" aria-label="Map layer controls">
+        <button class="layer-btn active" data-layer="standard" title="Standard map" aria-label="Standard map layer" aria-pressed="true">🗺️</button>
+        <button class="layer-btn" data-layer="satellite" title="Satellite view" aria-label="Satellite map layer" aria-pressed="false">🛰️</button>
+        <button class="layer-btn" data-layer="dark" title="Dark map" aria-label="Dark map layer" aria-pressed="false">🌙</button>
       </div>
 
-      <!-- Mobile FAB to open sidebar -->
-      <button id="btn-fab" class="fab mobile-only" aria-label="Browse places">☰ Browse</button>
-    </div>
+      <!-- Mobile FAB -->
+      <button id="btn-fab" class="fab mobile-only" aria-label="Browse places in Pakistan">☰ Browse Places</button>
+    </main>
   </div>
 
   <!-- INFO PANEL -->
-  <div id="info-panel" class="info-panel" role="dialog" aria-label="Place details" aria-hidden="true">
-    <!-- Drag handle (mobile) -->
-    <div class="panel-handle"></div>
-    <button id="close-panel" class="close-panel-btn" aria-label="Close">✕</button>
+  <div id="info-panel" class="info-panel" role="dialog" aria-modal="true" aria-label="Place details" aria-hidden="true">
+    <div class="panel-handle" aria-hidden="true"></div>
+    <button id="close-panel" class="close-panel-btn" aria-label="Close place details">✕</button>
 
     <div class="panel-hero">
-      <img id="panel-image" src="" alt="" loading="lazy">
+      <img id="panel-image" src="" alt="" loading="lazy" width="400" height="200">
       <div class="panel-hero-overlay">
         <div class="panel-badges">
           <span id="panel-category-badge" class="category-badge"></span>
           <span id="panel-province-badge" class="province-badge"></span>
         </div>
-        <h2 id="panel-title"></h2>
-        <div id="panel-rating" class="panel-rating"></div>
+        <h1 id="panel-title"></h1>
+        <div id="panel-rating" class="panel-rating" aria-label="Rating"></div>
       </div>
     </div>
 
     <div class="panel-body">
-      <!-- Quick info -->
       <div class="panel-quickinfo">
-        <div class="qi-item"><span>📅</span><div><div class="qi-label">Best Time</div><div id="panel-besttime" class="qi-value"></div></div></div>
-        <div class="qi-item"><span>📍</span><div><div class="qi-label">Region</div><div id="panel-province" class="qi-value"></div></div></div>
+        <div class="qi-item">
+          <span aria-hidden="true">📅</span>
+          <div>
+            <div class="qi-label">Best Time to Visit</div>
+            <div id="panel-besttime" class="qi-value"></div>
+          </div>
+        </div>
+        <div class="qi-item">
+          <span aria-hidden="true">📍</span>
+          <div>
+            <div class="qi-label">Province / Region</div>
+            <div id="panel-province" class="qi-value"></div>
+          </div>
+        </div>
       </div>
 
-      <!-- Description -->
-      <div class="panel-section">
-        <div class="section-label">About</div>
+      <section class="panel-section" aria-labelledby="about-label">
+        <div class="section-label" id="about-label">About</div>
         <p id="panel-description"></p>
-      </div>
+      </section>
 
-      <!-- History -->
-      <div class="panel-section">
-        <div class="section-label">History</div>
+      <section class="panel-section" aria-labelledby="history-label">
+        <div class="section-label" id="history-label">History</div>
         <p id="panel-history"></p>
-      </div>
+      </section>
 
-      <!-- Actions -->
       <div class="panel-actions">
-        <button id="btn-favorite-place" class="action-btn fav-btn">
-          <span class="fav-icon">🤍</span><span class="fav-label">Save</span>
+        <button id="btn-favorite-place" class="action-btn fav-btn" aria-label="Save to favorites">
+          <span class="fav-icon" aria-hidden="true">🤍</span>
+          <span class="fav-label">Save</span>
         </button>
-        <button id="btn-directions" class="action-btn dir-btn">
-          <span>🧭</span><span>Maps</span>
+        <button id="btn-directions" class="action-btn dir-btn" aria-label="Open in Google Maps">
+          <span aria-hidden="true">🧭</span>
+          <span>Maps</span>
         </button>
-        <button id="btn-share" class="action-btn share-btn">
-          <span>🔗</span><span>Share</span>
+        <button id="btn-share" class="action-btn share-btn" aria-label="Share this place">
+          <span aria-hidden="true">🔗</span>
+          <span>Share</span>
         </button>
       </div>
     </div>
   </div>
 
   <!-- Toast -->
-  <div id="toast" class="toast hidden" role="alert" aria-live="polite"></div>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <!-- Hidden SEO content block (crawlable, not visually shown) -->
+  <section id="seo-content" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+    <h2>Explore Pakistan — Interactive Tourism Map</h2>
+    <p>Pakistan is a country of extraordinary diversity, home to some of the world's most spectacular landscapes and richest history. From the towering peaks of the Karakoram and Himalaya ranges in Gilgit-Baltistan to the ancient ruins of Mohenjo-daro in Sindh, from the lush green valleys of Khyber Pakhtunkhwa to the golden beaches of Balochistan, Pakistan offers countless experiences for every type of traveller.</p>
+    <h3>Tourist Places in Gilgit-Baltistan</h3>
+    <p>Gilgit-Baltistan is the adventure capital of Pakistan, featuring K2 Base Camp, Hunza Valley, Attabad Lake, Skardu, Shigar Fort, Deosai National Park, Rakaposhi Base Camp, and many more breathtaking destinations.</p>
+    <h3>Historical Places in Punjab</h3>
+    <p>Punjab is home to magnificent Mughal heritage including Lahore Fort, Badshahi Mosque, Shalimar Gardens (UNESCO World Heritage Sites), Rohtas Fort, Taxila archaeological sites, and Anarkali Bazaar.</p>
+    <h3>Tourist Spots in Khyber Pakhtunkhwa</h3>
+    <p>KPK features stunning valleys like Swat Valley, Naran, Kaghan, Malam Jabba, Chitral, and Tirich Mir, along with ancient Buddhist sites at Takht-i-Bahi.</p>
+    <h3>Places to Visit in Sindh</h3>
+    <p>Sindh is host to the ancient Indus Valley Civilization sites of Mohenjo-daro, the historic Makli Necropolis, Karachi beaches, Keenjhar Lake, and the spiritual Sehwan Sharif shrine.</p>
+    <h3>Tourism in Balochistan</h3>
+    <p>Balochistan offers pristine beaches along the Makran Coastal Highway, Ziarat Residency, Quetta, Hingol National Park, Princess of Hope, and the ancient city of Sibi.</p>
+    <h3>Azad Kashmir Tourism</h3>
+    <p>Azad Kashmir features Neelum Valley, Muzaffarabad, Rawalakot, Banjosa Lake, Shounter Lake, Sharda ruins, and the scenic Leepa Valley.</p>
+  </section>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
