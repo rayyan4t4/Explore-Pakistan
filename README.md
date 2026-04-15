@@ -5,7 +5,7 @@ An interactive web-based tourism map of Pakistan showcasing **beautiful, histori
 ## 🌍 Features
 
 * Interactive Map of Pakistan
-* 100+ Tourist Locations
+* 500+ Tourist Locations
 * Clickable Map Markers
 * AI-Generated Place Overview
 * Search Functionality
